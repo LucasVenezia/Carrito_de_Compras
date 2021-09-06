@@ -1,0 +1,27 @@
+// import/export 
+
+commonJS
+
+const nombre_variable = require("nombre_archivo");
+module.exports = {nombre_variable : valor}
+
+ES6
+
+import nombre_variable from "nombre_archivo";
+import {nombre_variable} from "nombre_archivo";
+
+const nombre_variable = true;
+export default nombre_variable
+
+
+
+
+jsx : JavaScript and XML
+
+componentes = funciones que retornan una vista
+
+function App(){ return ""}
+
+const App = () => {return ""}
+
+class App {}
