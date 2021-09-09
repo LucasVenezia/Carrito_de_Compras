@@ -1,4 +1,5 @@
 import Nav from "./NavBar";
+import ItemListContainer from "./ItemListContainer";
 import "./styles/titulo.css";
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
                 FERRETERIA ALVEAR
             </h1> 
             <Nav/>
+            <ItemListContainer greeting= "Bienvenido a Ferreteria Virtual"/>
         </header>  
     )
 }

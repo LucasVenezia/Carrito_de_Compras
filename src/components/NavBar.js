@@ -1,4 +1,5 @@
-import "./styles/navBar.css"
+import Cart from "./CartWidget";
+import "./styles/navBar.css";
 
 const Nav = () => {
     return (
@@ -7,6 +8,7 @@ const Nav = () => {
                 <a className="nav-enlace" href="#">Productos</a>
                 <a className="nav-enlace" href="#">Preguntas Frecuentes</a>
                 <a className="nav-enlace" href="#">Contacto</a>
+                <Cart/>
             </nav> 
     )
 }
