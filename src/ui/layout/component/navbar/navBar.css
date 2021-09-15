@@ -1,4 +1,4 @@
-.nav-enlace{
+.nav-link{
     display: inline-block;
     background: salmon;
     color: #fff;
@@ -6,7 +6,7 @@
     text-decoration: none;
 }
 
-.nav-enlace:hover{
+.nav-link:hover{
     background: rosybrown;
 }
 
@@ -37,3 +37,4 @@ nav{
     }
 
 }
+
