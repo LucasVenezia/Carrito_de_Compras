@@ -1,4 +1,4 @@
-import Count from "./itemCount/ItemCount";
+import Count from "./itemCount/ItemCount"
 
 
 const Item = ({product}) => {
@@ -7,7 +7,6 @@ const Item = ({product}) => {
             <img src={product.img} className="card-img-top" alt={product.name} />
             <div className="card-body">
                 <h5 className="card-title">{product.title} <br />${product.price},00</h5>
-                <p className="card-text">{product.description}</p>
                 <Count/>
             </div>
         </div>
