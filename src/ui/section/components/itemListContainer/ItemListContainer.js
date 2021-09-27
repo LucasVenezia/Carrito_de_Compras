@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import List from "./itemList/ItemList";
+import "./title-container.css"
 
 
 
@@ -29,19 +30,25 @@ const ItemListContainer = () => {
 
         return (
             <>
-            <h2 className = "title">
-                Productos
-            </h2>
-                <List products={products}/>
+            <div>
+                <h2 className = "title-container">
+                    Productos
+                </h2>
+                <hr />   
+            </div>
+            <List products={products}/>
             </>
         );
 
     }else{
         return(
             <>
-                <h2 className = "title">
-                    Productos
-                </h2>
+                <div>
+                    <h2 className = "title-container">
+                        Productos
+                    </h2>
+                    <hr />   
+                </div>
                 <div className="d-flex justify-content-center">
                     <div className="spinner-border text-danger" role="status">
                     </div>

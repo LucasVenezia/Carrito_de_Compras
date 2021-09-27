@@ -1,7 +1,5 @@
-import ItemDetailContainer from "../../../section/components/itemDetailContainer/ItemDetailContainer";
-import ItemListContainer from "../../../section/components/itemListContainer/ItemListContainer";
-import Footer from "../footer/Footer";
-import Header from "../header/Header";
+import { Routes } from "../../../section/components/routes/appRoutes";
+
 
 
 const App = () => {
@@ -10,10 +8,7 @@ const App = () => {
 
     return (
         <>
-            <Header/>
-            <ItemListContainer/>
-            <ItemDetailContainer/>
-            <Footer/>
+            <Routes/>
         </>
     )
 }

@@ -1,9 +1,11 @@
+import { NavLink } from "react-router-dom";
+
 const LogIn = () => {
     return ( 
-        <a className="material-icons nav-link" href="#as">
+        <NavLink className="material-icons nav-link" to="LogIn">
             perm_identity
-        </a>
-     );
+        </NavLink>
+    );
 }
- 
+
 export default LogIn;

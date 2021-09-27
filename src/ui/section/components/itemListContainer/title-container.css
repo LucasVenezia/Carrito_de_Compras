@@ -1,0 +1,13 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.title-container {
+    
+        color: red;
+        display: flex;
+        justify-content: center;
+        
+    
+}
