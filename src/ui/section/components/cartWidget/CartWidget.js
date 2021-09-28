@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom";
 
+
 const Cart = () => {
     return ( 
         <>
-        <NavLink className="material-icons nav-link" to="/carrito">
+        <NavLink className="material-icons nav-link d-flex" to="/carrito">
             add_shopping_cart 
         </NavLink> 
-        <span className="nav-link">0</span>
+        <span className="nav-link d-flex">0</span>
         
         </>);
 }

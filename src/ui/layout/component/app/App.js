@@ -1,4 +1,4 @@
-import { Routes } from "../../../section/components/routes/appRoutes";
+import { Routes } from "../../../../routes/appRoutes";
 
 
 

@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom"
-import Header from "../../../layout/component/header/Header"
-import Footer from "../../../layout/component/footer/Footer"
-import ItemListContainer from "../itemListContainer/ItemListContainer"
-import ItemDetailContainer from "../itemDetailContainer/ItemDetailContainer"
+import Header from "../ui/layout/component/header/Header"
+import Footer from "../ui/layout/component/footer/Footer"
+import ItemListContainer from "../ui/section/components/itemListContainer/ItemListContainer"
+import ItemDetailContainer from "../ui/section/components/itemDetailContainer/ItemDetailContainer"
 
 export const Routes = () => {
     return (

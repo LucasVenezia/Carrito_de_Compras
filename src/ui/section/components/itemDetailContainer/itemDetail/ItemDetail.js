@@ -1,8 +1,15 @@
 import Count from "./itemCount/ItemCount";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router";
+import { getDetailById } from "../../../../../utils/getDetailById";
 
 
 const ItemDetail = ({detail}) => {
+
+    const {id} = useParams()
+    const prodDetail = getDetailById(id);
+console.log(prodDetail)
+
 
     return (
         <div className="card mt-5 ms-5" style= {{width: "18rem"}}>

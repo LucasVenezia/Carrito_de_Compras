@@ -1,16 +1,17 @@
 .nav-link{
-    display: inline-block;
-    background: salmon;
+    
     color: #fff;
-    padding: 10px 30px;
-    text-decoration: none;
+    
 }
 
 .nav-link:hover{
-    background: rosybrown;
+    background: rgb(148, 146, 146);
+} 
+NavLink:hover {
+    color: #fff
 }
 
-nav{
+/* nav{
     background: rebeccapurple;
     padding: 10px;
     display: flex;
@@ -37,4 +38,4 @@ nav{
     }
 
 }
-
+ */
