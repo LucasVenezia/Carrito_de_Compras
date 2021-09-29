@@ -3,7 +3,18 @@ import LogIn from "../../../section/components/login/LogIn";
 import "./navBar.css";
 import { NavLink } from "react-router-dom";
 
+
+const categories = [
+    {id:0, href:"/productos", texto:"Productos"},
+    {id:1, href:"/productos/cat/ferreteria", texto:"Ferretería"},
+    {id:2, href:"/productos/cat/maquinas", texto:"Máquinas"}
+]
+
 const Nav = ({cart}) => {
+
+    
+
+
     return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
@@ -23,18 +34,24 @@ const Nav = ({cart}) => {
                             <li className="nav-item dropdown">
                                 <NavLink className="nav-link dropdown-toggle active" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Catálogo</NavLink>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li>
+                                {categories.map(category =>(
+                                    <li key={category.id}>
+                                        <NavLink className="dropdown-item" to={category.href}>{category.texto}</NavLink>
+                                    </li>
+                                ))}
+                                    
+                                    {/* <li>
                                         <NavLink className="dropdown-item" to="/productos">Productos</NavLink>
                                     </li>
                                     <li>
                                         <hr className="dropdown-divider"/>
                                     </li>
                                     <li>
-                                        <NavLink className="dropdown-item" to="/productos/ferreteria">Ferretería</NavLink>
+                                        <NavLink className="dropdown-item" to= "/productos/cat">Ferretería</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink className="dropdown-item" to="/productos/maquinas">Máquinas</NavLink>
-                                    </li>
+                                        <NavLink className="dropdown-item" to="/productos/cat">Máquinas</NavLink>
+                                    </li> */}
                                 </ul>
                             </li>
                             <li className="nav-item">

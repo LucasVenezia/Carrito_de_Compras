@@ -1,45 +1,32 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./itemDetail/ItemDetail";
 import { serverProducts } from "../../../../data/Products";
+import { useParams } from "react-router";
 
 const ItemDetailContainer = () => {
-    const [details,setDetails] = useState ([])
+    const [products, setProducts] = useState([]);
+    const { id } = useParams();
+        
+    useEffect(() => {
+    const simulatorDetail = new Promise((resolve) => {
+        setTimeout(() => {
+        resolve(serverProducts);
+        }, 500);
+    });
 
-    useEffect (() => {
-        const simulatorDetail = new Promise ((resolve) => {
-            setTimeout(() => {
-                resolve(serverProducts)
-            },500)
-        })
-        simulatorDetail
-            .then((result) => {
-                setDetails(result)
-            })
-    })
+    simulatorDetail.then((products) => {
+        const product = products.find((product) => product.id == id);
+        setProducts(product);
+    });
+});
 
-    if(details.length > 0){
-
-        return (
-            <>
-            <div className="row">
-                {details.map((detail,index) => {
-                return <ItemDetail key={index} detail={detail}/> 
-                })}
-            </div>
-            </>
-        );
-
-    }else{
-        return(
-            <>
-                <div className="d-flex justify-content-center">
-                    <div className="spinner-border text-danger" role="status">
-                    </div>
-                </div>
-            </>
-        )
-    }
-    
-}
+    return (
+        <>
+        <div className="row">
+            <ItemDetail product={products} />{" "}
+        </div>{" "}
+    </>
+    );
+};
 
 export default ItemDetailContainer;

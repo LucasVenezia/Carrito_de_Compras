@@ -1,5 +1,5 @@
 import Item from "./item/Item";
-import { getProductsByCat } from "../../../../../utils/getProductsByCat"
+
 
 
 const List = ({products}) => {

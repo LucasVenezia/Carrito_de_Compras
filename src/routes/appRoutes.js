@@ -13,6 +13,7 @@ export const Routes = () => {
                     <Route exact path="/"/>
                     <Route exact path="/productos" component={ItemListContainer}/>
                     <Route exact path="/producto/detalle/:id" component={ItemDetailContainer}/>
+                    <Route exact path="/productos/cat/:id" component={ItemDetailContainer}/>
                 </Switch>
                 <Footer/>
             </Router>

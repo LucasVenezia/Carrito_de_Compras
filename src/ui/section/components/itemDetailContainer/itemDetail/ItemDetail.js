@@ -1,24 +1,20 @@
 import Count from "./itemCount/ItemCount";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router";
-import { getDetailById } from "../../../../../utils/getDetailById";
 
 
-const ItemDetail = ({detail}) => {
 
-    const {id} = useParams()
-    const prodDetail = getDetailById(id);
-console.log(prodDetail)
+const ItemDetail = ({product}) => {
 
 
     return (
-        <div className="card mt-5 ms-5" style= {{width: "18rem"}}>
-            <img src={detail.img} className="card-img-top" alt={detail.name} />
+        <div className="card mt-5 ms-5 d-flex" style= {{width: "18rem"}}>
+            <img src={product.img} className="card-img-top" alt={product.name} />
             <div className="card-body">
-                <h5 className="card-title">{detail.title} <br />${detail.price},00</h5>
-                <p className="card-text">{detail.description}</p>
-                <Count/>
-                <Link to="/producto" className="btn btn-success mt-3">Volver</Link>
+                <h5 className="card-title">{product.title} <br />${product.price},00</h5>
+                <p className="card-text">{product.description}</p>
+                <Count stock={product.stock}/>
+                <br/>
+                <Link to="/" className="btn btn-success mt-3">Volver</Link>
                 
             </div>
         </div>
