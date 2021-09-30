@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 
 const ItemDetail = ({product}) => {
 
+    const onAdd = (cantidad) => {
+        console.log(cantidad);
+        console.log(product);
+
+    }
+
 
     return (
         <div className="card mt-5 ms-5 d-flex" style= {{width: "18rem"}}>
@@ -12,10 +18,10 @@ const ItemDetail = ({product}) => {
             <div className="card-body">
                 <h5 className="card-title">{product.title} <br />${product.price},00</h5>
                 <p className="card-text">{product.description}</p>
-                <Count stock={product.stock}/>
+                <Count stock={product.stock} onAdd={onAdd}/>
                 <br/>
                 <Link to="/" className="btn btn-success mt-3">Volver</Link>
-                
+                <Link to="/carrito" className="btn btn-success ms-3 mt-3">Comprar</Link>
             </div>
         </div>
         

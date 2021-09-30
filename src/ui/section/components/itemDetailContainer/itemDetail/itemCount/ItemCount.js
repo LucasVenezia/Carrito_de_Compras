@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-const Count = ({stock}) => {
+const Count = ({stock,onAdd}) => {
 
     const [value, setValue] = useState(0);
-   
+    
     const handleSum = () => {
         setValue(value + 1);
     }
@@ -29,7 +29,7 @@ const Count = ({stock}) => {
 
     return ( 
         <>
-            <a href="#as" className="btn btn-primary" onClick={cart} >Agregar al Carrito</a>
+            <a href="#as" className="btn btn-primary" onClick={() => { onAdd(value) }} >Agregar al Carrito</a>
             <div className= "btn-addSub mt-3">
                 <a href="#as" className="btn btn-danger ms-3 me-3 mb-3" onClick={handleSubstract}>-</a>
                 <span className= "mb-3">{value}</span>
