@@ -6,8 +6,8 @@ import { NavLink } from "react-router-dom";
 
 const categories = [
     {id:0, href:"/productos", texto:"Productos"},
-    {id:1, href:"/productos/cat/ferreteria", texto:"Ferretería"},
-    {id:2, href:"/productos/cat/maquinas", texto:"Máquinas"}
+    {id:1, href:"/productos/ferreteria", texto:"Ferretería"},
+    {id:2, href:"/productos/maquinas", texto:"Máquinas"}
 ]
 
 const Nav = ({cart}) => {
