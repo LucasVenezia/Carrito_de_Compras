@@ -5,6 +5,7 @@ import ItemListContainer from "../ui/section/components/itemListContainer/ItemLi
 import ItemDetailContainer from "../ui/section/components/itemDetailContainer/ItemDetailContainer"
 import Cart from "../ui/section/components/cartWidget/CartWidget"
 import CartDetail from "../ui/section/components/cartWidget/CartDetail"
+import Home from "../ui/section/components/home/home"
 
 export const Routes = () => {
     return (
@@ -12,7 +13,7 @@ export const Routes = () => {
             <Router>
                 <Header/>
                 <Switch>
-                    <Route exact path="/"/>
+                    <Route exact path="/Home" component={Home}/>
                     <Route exact path="/productos" component={ItemListContainer}/>
                     <Route exact path="/producto/detalle/:id" component={ItemDetailContainer}/>
                     <Route exact path="/productos/:id" component={ItemListContainer}/>

@@ -26,7 +26,7 @@ const ItemListContainer = () => {
                 setProducts(resultado)
             })
         }
-    },[])
+    },[id])
         return(
             <>
             

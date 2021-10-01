@@ -34,24 +34,11 @@ const Nav = ({cart}) => {
                             <li className="nav-item dropdown">
                                 <NavLink className="nav-link dropdown-toggle active" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Catálogo</NavLink>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                {categories.map(category =>(
-                                    <li key={category.id}>
-                                        <NavLink className="dropdown-item" to={category.href}>{category.texto}</NavLink>
-                                    </li>
-                                ))}
-                                    
-                                    {/* <li>
-                                        <NavLink className="dropdown-item" to="/productos">Productos</NavLink>
-                                    </li>
-                                    <li>
-                                        <hr className="dropdown-divider"/>
-                                    </li>
-                                    <li>
-                                        <NavLink className="dropdown-item" to= "/productos/cat">Ferretería</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink className="dropdown-item" to="/productos/cat">Máquinas</NavLink>
-                                    </li> */}
+                                    {categories.map(category =>(
+                                        <li key={category.id}>
+                                            <NavLink className="dropdown-item" to={category.href}>{category.texto}</NavLink>
+                                        </li>
+                                    ))}
                                 </ul>
                             </li>
                             <li className="nav-item">
