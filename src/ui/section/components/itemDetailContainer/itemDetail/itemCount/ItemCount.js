@@ -2,14 +2,14 @@ import React, { useState } from "react";
 
 const Count = ({stock,onAdd}) => {
 
-    const [value, setValue] = useState(0);
+    const [value, setValue] = useState(1);
     
     const handleSum = () => {
         setValue(value + 1);
     }
 
     const handleSubstract = () => {
-        if(value === 0){
+        if(value === 1){
             return;
         }
         setValue(value - 1);

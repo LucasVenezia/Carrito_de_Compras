@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { cartContext } from "../../../../layout/component/context/CartContext";
 import Count from "./itemCount/ItemCount";
 import { Link } from "react-router-dom";
 
@@ -5,9 +7,12 @@ import { Link } from "react-router-dom";
 
 const ItemDetail = ({product}) => {
 
-    const onAdd = (cantidad) => {
-        console.log(cantidad);
-        console.log(product);
+    const {addItem} = useContext(cartContext)
+
+    const onAdd = (qty) => {
+        //console.log(qty);
+        //console.log(product);
+        addItem(product,qty)
 
     }
 

@@ -7,8 +7,8 @@ import { useParams } from "react-router";
 const ItemListContainer = () => {
     const [products,setProducts] = useState ([])
     const { id } = useParams();
-    console.log("hola");
     
+        
     useEffect (() => {
         const simulator = new Promise ((resolve) => {
             setTimeout(() => {
@@ -51,11 +51,10 @@ const ItemListContainer = () => {
             </div>
             <List products={products}/>
             </div>
-             }
+            }
             </>
         )
     
-
     
 }
     export default ItemListContainer;
