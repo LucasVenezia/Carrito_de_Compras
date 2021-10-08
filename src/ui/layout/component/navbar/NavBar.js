@@ -1,4 +1,4 @@
-import Cart from "../../../section/components/cartWidget/CartWidget";
+import CartWidget from "../../../section/components/cartWidget/CartWidget";
 import LogIn from "../../../section/components/login/LogIn";
 import "./navBar.css";
 import { NavLink } from "react-router-dom";
@@ -49,7 +49,7 @@ const Nav = ({cart}) => {
                             </li>    
                         </ul>
                         <LogIn/>
-                        <Cart cart={cart}/>
+                        <CartWidget cart={cart}/>
                     </div>
                 </div>
             </nav>

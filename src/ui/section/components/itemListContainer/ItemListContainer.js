@@ -30,7 +30,7 @@ const ItemListContainer = () => {
         return(
             <>
             
-                {products.lenght = 0? 
+                {products.length === 0? 
                 <div>
                     <div>
                         <h2 className = "title-container"> 

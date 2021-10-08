@@ -6,6 +6,7 @@ import ItemDetailContainer from "../ui/section/components/itemDetailContainer/It
 import CartDetail from "../ui/section/components/cartWidget/CartDetail"
 import Home from "../ui/section/components/home/home"
 import ProviderCartContext from "../ui/layout/component/context/CartContext"
+import { CheckOut } from "../ui/section/components/checkOut/CheckOut"
 
 
 export const Routes = () => {
@@ -21,6 +22,7 @@ export const Routes = () => {
                             <Route exact path="/producto/detalle/:id" component={ItemDetailContainer}/>
                             <Route exact path="/productos/:id" component={ItemListContainer}/>
                             <Route exact path="/carrito" component={CartDetail}/>
+                            <Route exact path="/checkout" component={CheckOut} />
                         </Switch>
                     <Footer/>
                 </ProviderCartContext>
