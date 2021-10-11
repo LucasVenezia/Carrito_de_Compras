@@ -1,32 +1,60 @@
 import { useEffect, useState } from "react";
 import List from "./itemList/ItemList";
 import "./title-container.css"
-import { serverProducts } from "../../../../data/Products";
-import { useParams } from "react-router";
+import { useParams } from "react-router"; 
+import { firestore } from "../../../../firebase/firebase"
 
 const ItemListContainer = () => {
     const [products,setProducts] = useState ([])
     const { id } = useParams();
-    
+
+    useEffect(() => {
+        const db = firestore
+
+        const collections = db
+            .collection("products")
         
-    useEffect (() => {
-        const simulator = new Promise ((resolve) => {
-            setTimeout(() => {
-                resolve(serverProducts)
-            },1000)
-        })
-        if(id){
-            simulator
-            .then(data => {
-                setProducts(data.filter(item => item.cat === id))
-            })
+        if(id === "ferreteria"){
+            collections
+                .where("cat", "==", "ferreteria")
+                .get()
+                .then((results) => {
+                    const data = results.docs.map((doc) => ({
+                        id: doc.id,
+                        ...doc.data()
+                    }));
+                    setProducts(data)
+                })
+                .catch(err => console.log(err))
+
+        }else if(id === "maquinas") {   
+            collections
+                .where("cat", "==", "maquinas")
+                .get()
+                .then((results) => {
+                    const data = results.docs.map((doc) => ({
+                        id: doc.id,
+                        ...doc.data()
+                    }));
+                    setProducts(data)
+                })
+                .catch(err => console.log(err))
+
         }else{
-            simulator
-            .then((resultado) => {
-                setProducts(resultado)
-            })
+            collections
+                .get()
+                .then((results) => {
+                    const data = results.docs.map((doc) => ({
+                        id: doc.id,
+                        ...doc.data()
+                    }));
+                    setProducts(data)
+                })
+                .catch(err => console.log(err))
         }
     },[id])
+
+
         return(
             <>
             

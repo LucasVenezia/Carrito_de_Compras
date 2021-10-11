@@ -10,8 +10,6 @@ const ItemDetail = ({product}) => {
     const {addItem} = useContext(cartContext)
 
     const onAdd = (qty) => {
-        //console.log(qty);
-        //console.log(product);
         addItem(product,qty)
 
     }
@@ -25,7 +23,7 @@ const ItemDetail = ({product}) => {
                 <p className="card-text">{product.description}</p>
                 <Count stock={product.stock} onAdd={onAdd}/>
                 <br/>
-                <Link to="/" className="btn btn-success mt-3">Volver</Link>
+                <Link to="/productos" className="btn btn-success mt-3">Volver</Link>
                 <Link to="/carrito" className="btn btn-success ms-3 mt-3">Comprar</Link>
             </div>
         </div>

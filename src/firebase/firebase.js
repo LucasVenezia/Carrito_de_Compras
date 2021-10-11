@@ -1,7 +1,7 @@
 //1) Traer firebase
 import firebase from "firebase/app";
 //2) Traer el servicio que vas a usar
-import 'firebase/firestore'
+import 'firebase/firestore';
 
 //3) Hacer la inicializacion 
 

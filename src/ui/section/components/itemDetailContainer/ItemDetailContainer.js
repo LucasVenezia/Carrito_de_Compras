@@ -1,24 +1,28 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./itemDetail/ItemDetail";
-import { serverProducts } from "../../../../data/Products";
 import { useParams } from "react-router";
+import { firestore } from "../../../../firebase/firebase";
 
 const ItemDetailContainer = () => {
     const [products, setProducts] = useState([]);
     const { id } = useParams();
         
     useEffect(() => {
-    const simulatorDetail = new Promise((resolve) => {
-        setTimeout(() => {
-        resolve(serverProducts);
-        }, 500);
-    });
+        const db = firestore
+        const collections = db
+            .collection("products")
 
-    simulatorDetail.then((products) => {
-        const product = products.find((product) => product.id == id);
-        setProducts(product);
-    });
-});
+        collections
+            .get()
+            .then((results) => {
+                const data = results.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+                setProducts(data.find(res => res.id === id))
+            })
+            .catch(err => console.log(err))
+},[id]);
 
     return (
         <>
