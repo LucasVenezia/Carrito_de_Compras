@@ -5,6 +5,9 @@ const Count = ({stock,onAdd}) => {
     const [value, setValue] = useState(1);
     
     const handleSum = () => {
+        if (value === stock){
+            return;
+        }
         setValue(value + 1);
     }
 
@@ -14,19 +17,7 @@ const Count = ({stock,onAdd}) => {
         }
         setValue(value - 1);
     }
-    const cart = () => {
-        if (value === 0) {
-            alert("No se agrego nada al carrito")
-        }
-        else if (value === 1){
-            alert("Se agrego:" + value + "articulo al carrito")
-            }
-        else if (value > 1){
-            alert("Se agregaron:" + value + "articulos al carrito")
-        }
-        setValue(0)
-    }
-
+    
     return ( 
         <>
             <a href="#as" className="btn btn-primary" onClick={() => { onAdd(value) }} >Agregar al Carrito</a>

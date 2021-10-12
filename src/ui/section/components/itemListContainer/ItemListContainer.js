@@ -36,6 +36,7 @@ const ItemListContainer = () => {
                         id: doc.id,
                         ...doc.data()
                     }));
+                    console.log(data);
                     setProducts(data)
                 })
                 .catch(err => console.log(err))

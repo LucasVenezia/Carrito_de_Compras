@@ -39,8 +39,8 @@ const CartDetail = () => {
                                 <td className="text-center">$ {subTotal},00</td>
                                 <td className="text-center"><button type="button" className="btn btn-danger" onClick={() => removeItem(shopCart.id)}>Borrar Producto</button></td>
                             </tr>
-                            
-                        )})}
+                        )}
+                        )}
                         <tr>
                             <td className="text-center"><Link to="/productos" className="btn btn-warning ms-3">Seguir Comprando</Link></td>
                             <td className="text-center"></td>

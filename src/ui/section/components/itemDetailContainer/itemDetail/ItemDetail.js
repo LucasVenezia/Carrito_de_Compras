@@ -17,7 +17,7 @@ const ItemDetail = ({product}) => {
 
     return (
         <div className="card mt-5 ms-5 d-flex" style= {{width: "18rem"}}>
-            <img src={product.img} className="card-img-top" alt={product.name} />
+            <img src={product.img} className="card-img-top img-fluid" style={{height: "40vh"}} alt={product.name} />
             <div className="card-body">
                 <h5 className="card-title">{product.title} <br />${product.price},00</h5>
                 <p className="card-text">{product.description}</p>
