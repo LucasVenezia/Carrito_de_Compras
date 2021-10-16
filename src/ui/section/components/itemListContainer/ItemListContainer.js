@@ -11,49 +11,23 @@ const ItemListContainer = () => {
     useEffect(() => {
         const db = firestore
 
-        const collections = db
-            .collection("products")
-        
-        if(id === "ferreteria"){
-            collections
-                .where("cat", "==", "ferreteria")
-                .get()
-                .then((results) => {
-                    const data = results.docs.map((doc) => ({
-                        id: doc.id,
-                        ...doc.data()
-                    }));
-                    setProducts(data)
-                })
-                .catch(err => console.log(err))
+        const collections = db.collection("products")
 
-        }else if(id === "maquinas") {   
-            collections
-                .where("cat", "==", "maquinas")
-                .get()
-                .then((results) => {
-                    const data = results.docs.map((doc) => ({
-                        id: doc.id,
-                        ...doc.data()
-                    }));
-                    setProducts(data)
-                })
-                .catch(err => console.log(err))
+        let consult
+        if(!id) consult = collections.get()
+        if(id === "ferreteria") consult = collections.where("cat", "==", "ferreteria").get()
+        if(id === "maquinas") consult = collections.where("cat", "==", "maquinas").get()
 
-        }else{
-            collections
-                .get()
-                .then((results) => {
-                    const data = results.docs.map((doc) => ({
-                        id: doc.id,
-                        ...doc.data()
-                    }));
-                    setProducts(data)
-                })
-                .catch(err => console.log(err))
-        }
+        consult
+            .then((results) => {
+                const data = results.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+                setProducts(data)
+            })
+            .catch(err => console.log(err))
     },[id])
-
 
         return(
             <>

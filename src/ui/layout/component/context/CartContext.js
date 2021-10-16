@@ -1,4 +1,3 @@
-import { logDOM } from "@testing-library/dom";
 import { createContext, useState } from "react";
 
 
@@ -11,7 +10,7 @@ const ProviderCartContext = ({children}) => {
 
     const [shopCart, setShopCart] = useState([])
     const [counter, setCounter] = useState(0)
-
+    
     let counterWidget = 0
         
     const removeItem = (id) => setShopCart(shopCart.filter(product => product.id !== id))
@@ -31,10 +30,7 @@ const ProviderCartContext = ({children}) => {
         
     counterWidget = counter + quantity
     setCounter(counterWidget)
-    
 }
-
-
 
     const contextValue = {
         shopCart,

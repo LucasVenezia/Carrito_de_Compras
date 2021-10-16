@@ -20,5 +20,6 @@ const app = firebase.initializeApp(firebaseConfig)
 //4) tener la referencia de la base de datos
 
 export const firestore = firebase.firestore(app)
+export const TimeStamp = firebase.firestore.Timestamp;
 
 
