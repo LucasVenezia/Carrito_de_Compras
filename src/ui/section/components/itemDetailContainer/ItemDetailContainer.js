@@ -25,11 +25,11 @@ const ItemDetailContainer = () => {
 },[id]);
 
     return (
-        <>
-        <div className="row">
-            <ItemDetail product={products} />{" "}
-        </div>{" "}
-    </>
+        
+        <div className="d-flex justify-content-center mb-3">
+            <ItemDetail product={products} />
+        </div>
+    
     );
 };
 

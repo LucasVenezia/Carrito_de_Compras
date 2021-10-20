@@ -31,7 +31,7 @@ const CartDetail = () => {
         }
     }
     
-    function createNewOrder (name, phone, email) {
+    const createNewOrder = (name, phone, email) => {
         
         const db = firestore
         const collections = db.collection("orders")
@@ -155,19 +155,21 @@ const CartDetail = () => {
                             handleCancel()
                             createNewOrder(data.name, data.phone, data.email)
                             setOrderConfirm(true)
-                            })}>Finalizar Compra</Button>            
+                            })}>
+                                Finalizar Compra
+                        </Button>            
                     </Modal.Footer>
                 </Modal> 
                 <Modal id = "confirmedOrder" show = {orderConfirm} onHide = {() => setOrderConfirm(false)}>
                     <Modal.Header closeButton onClick = {() => {
                         clear()
-                        history.push("/home")}}>
+                        history.push("/")}}>
                         <Modal.Title>
                             Su compra ha sido Confirmada con Exito!!!
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        N° de Orden: {orderId}
+                        N° de Orden: {orderId === undefined? <p>Procesando...</p> : orderId}
                         <ul>
                             {shopCart.map((shopCart) => {
                                 return (<li key={shopCart.id}>
@@ -177,7 +179,7 @@ const CartDetail = () => {
                                         </li>)})
                             }
                         </ul>
-                        TOTAL: {grandTotal}
+                        TOTAL: ${grandTotal},00
                     </Modal.Body>
                     
                 </Modal>

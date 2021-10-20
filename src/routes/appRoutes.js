@@ -17,7 +17,7 @@ export const Routes = () => {
                 <ProviderCartContext>
                     <Header/>
                         <Switch>
-                            <Route exact path="/home" component={Home}/>
+                            <Route exact path="/" component={Home}/>
                             <Route exact path="/productos" component={ItemListContainer}/>
                             <Route exact path="/producto/detalle/:id" component={ItemDetailContainer}/>
                             <Route exact path="/productos/:id" component={ItemListContainer}/>

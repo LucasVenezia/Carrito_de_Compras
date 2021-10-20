@@ -31,29 +31,22 @@ const ItemListContainer = () => {
 
         return(
             <>
-            
                 {products.length === 0? 
-                <div>
-                    <div>
-                        <h2 className = "title-container"> 
-                            Productos
-                        </h2>
-                        <hr />   
-                    </div>
-                    <div className="d-flex justify-content-center">
-                        <div className="spinner-border text-danger" role="status"></div>
-                    </div>
-                </div>
-            : <div>
-                <div>
-                <h2 className = "title-container">
-                    Productos
-                </h2>
-                <hr />   
-            </div>
-            <List products={products}/>
-            </div>
-            }
+                        <div>
+                            <div className="d-flex justify-content-center">
+                                <div className="spinner-border text-danger" role="status"></div>
+                            </div>
+                        </div>
+                    : <div>
+                            <div>
+                                <h2 className = "title-container">
+                                    Productos
+                                </h2>
+                                <hr />   
+                            </div>
+                            <List products={products}/>
+                        </div>
+                }
             </>
         )
     

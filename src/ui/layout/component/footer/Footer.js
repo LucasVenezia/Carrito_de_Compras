@@ -1,7 +1,7 @@
 const Footer = () => {
     return ( 
-        <footer>
-            <p>Copyright &copy; 2020</p>
+        <footer className="d-flex justify-content-center">
+            <p>Copyright &copy; Lucas Venezia 2021</p>
         </footer>
     );
 }
