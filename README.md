@@ -9,7 +9,7 @@ La aplicación fue creada para adaptar y complementar ventas de un local mediant
 El proyecto fue creado con Create React App, se deberá clonar y descargar el repositorio.
 El proyecto se inicia con npm start. Luego del inicio del mismo se abrirá en el navegador http://localhost:3000 para la visualización del mismo.
 Se requiere la instalacion de NodeJs.
-##### ** Para mas información **
+##### **Para mas información**
 * [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 * [React documentation](https://reactjs.org/).
 
